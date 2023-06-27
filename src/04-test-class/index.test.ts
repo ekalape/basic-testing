@@ -21,7 +21,7 @@ describe('BankAccount', () => {
     expect(() => newBankAcc.withdraw(2000)).toThrow(InsufficientFundsError);
   });
 
-  test('should throw TransferFailedError error when transferring more than balance', () => {
+  test('should throw InsufficientFundsError error when transferring more than balance', () => {
     const otherBankAcc = getBankAccount(0)
     expect(() => newBankAcc.transfer(2000, otherBankAcc)).toThrow(InsufficientFundsError);
   });
