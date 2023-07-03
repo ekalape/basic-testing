@@ -16,7 +16,8 @@ describe('doStuffByTimeout', () => {
 
   afterEach(() => {
     jest.clearAllTimers();
-    jest.restoreAllMocks()
+    jest.restoreAllMocks();
+    jest.clearAllMocks();
   })
 
   afterAll(() => {
