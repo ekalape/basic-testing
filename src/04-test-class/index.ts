@@ -27,7 +27,6 @@ export class BankAccount {
   }
 
   public transfer(amount: number, toAccount: BankAccount): this {
-
     if (this === toAccount) {
       throw new TransferFailedError();
     }

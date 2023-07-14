@@ -16,15 +16,18 @@ const testCases = [
 
 const nullTestCases = [
   { a: 1, b: 2, action: '6' },
-  { a: 2, b: "number", action: Action.Divide },
+  { a: 2, b: 'number', action: Action.Divide },
   { a: undefined, b: 2, action: Action.Substract },
-]
+];
 
 describe('simpleCalculator', () => {
-  test.each(testCases)("should test all actions in simple calculator", ({ a, b, action, expected }) => {
-    expect(simpleCalculator({ a, b, action })).toBe(expected)
-  })
-  test.each(nullTestCases)("should return null", ({ a, b, action }) => {
-    expect(simpleCalculator({ a, b, action })).toBeNull
-  })
+  test.each(testCases)(
+    'should test all actions in simple calculator',
+    ({ a, b, action, expected }) => {
+      expect(simpleCalculator({ a, b, action })).toBe(expected);
+    },
+  );
+  test.each(nullTestCases)('should return null', ({ a, b, action }) => {
+    expect(simpleCalculator({ a, b, action })).toBeNull();
+  });
 });
